@@ -1,6 +1,12 @@
-
+#root{
+  height: 100%;
+}
 
 /*navbar*/
+
+.logo{
+  width: 8rem;
+}
 
 .navTag{
   padding: 3rem;
@@ -22,6 +28,11 @@
 .linkHome:hover{
   color: black;
 }
+
+.loginButton{
+  text-decoration: none;
+}
+
 
 /*end of navbar*/
 
@@ -55,4 +66,17 @@
 .brandClassName{
   color: rgba(112, 112, 112, 0.871);
   margin-bottom: 3rem;
+}
+
+/*catalogue*/
+
+.headerCatalogue{
+  font-weight: bold;
+}
+
+/*about*/
+
+.aboutBody{
+  height: 100%;
+  display: flex;
 }

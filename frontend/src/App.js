@@ -17,8 +17,14 @@ import {
   NavbarText
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import MainScreen from './Screens/MainScreen';
 import ProductScreen from './Screens/ProductScreen';
+import CatalogueScreen from './Screens/CatalogueScreen';
+import AboutScreen from './Screens/AboutScreen';
+import HelpScreen from './Screens/HelpScreen';
+import LoginScreen from './Screens/LoginScreen';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +35,7 @@ function App() {
     <BrowserRouter>
     <div>
   <Navbar light expand="md" className="navTag">
-        <NavbarBrand href="/">TERATIK</NavbarBrand>
+        <NavbarBrand href="/"><img className="logo img-fluid" src="/assets/images/teratics.jpeg"></img></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="pl-5" navbar>
@@ -37,19 +43,23 @@ function App() {
               <Link className="linkHome" to="/"><NavLink href="">Home</NavLink></Link>
             </NavItem>
             <NavItem className="navItemTag">
-              <NavLink href="">Catalogue</NavLink>
+            <Link className="linkHome" to="/catalogue"><NavLink href="">Catalogue</NavLink></Link>
             </NavItem>
             <NavItem className="navItemTag">
-              <NavLink href="" >About Us</NavLink>
+            <Link className="linkHome" to="/about"><NavLink href="">About Us</NavLink></Link>
             </NavItem>
             <NavItem className="navItemTag">
-              <NavLink href="" >Help</NavLink>
+            <Link className="linkHome" to="/help"><NavLink href="">Help</NavLink></Link>
             </NavItem>
           </Nav>
         </Collapse>
+        <NavbarText className="navbarTextTag"><Link className="loginButton" to="/login">Login <FontAwesomeIcon icon={faSignInAlt}/></Link></NavbarText>
       </Navbar>
 
-      
+    <Route path="/login" component={LoginScreen}/>
+    <Route path="/help" component={HelpScreen}/>
+    <Route path="/about" component={AboutScreen}/>
+    <Route path="/catalogue" component={CatalogueScreen}/>  
     <Route path="/product/:id" component={ProductScreen}/>
     <Route path="/" exact={true} component={MainScreen}/>
     <div className="footer">
