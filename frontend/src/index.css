@@ -1,0 +1,58 @@
+
+
+/*navbar*/
+
+.navTag{
+  padding: 3rem;
+  font-size: 1.2rem;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px rgba(0, 0, 0, 0.063) solid;
+}
+
+.navItemTag{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.linkHome{
+  text-decoration: none;
+  color :rgb(56, 56, 56);
+}
+
+.linkHome:hover{
+  color: black;
+}
+
+/*end of navbar*/
+
+.footer{
+  background-color: grey;
+}
+
+/*style card produk*/
+
+.tagCard{
+  border: none;
+  border-color: rgba(255, 255, 255, 0);
+}
+
+.productName{
+  text-decoration: none;
+  color: rgb(56, 56, 56);
+}
+
+.productName:hover{
+  transition: 1s;
+  color: rgb(0, 0, 0);
+}
+
+/*detail produk*/
+
+.headerTextDetail{
+  font-size: 4rem;
+}
+
+.brandClassName{
+  color: rgba(112, 112, 112, 0.871);
+  margin-bottom: 3rem;
+}
