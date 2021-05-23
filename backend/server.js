@@ -1,34 +1,32 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-import productRouter from './routers/productRouter.js';
-import userRouter from './routers/userRouter.js';
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const AuthRoute = require('./routes/auth');
 
-dotenv.config();
+require('dotenv').config();
 
 const app = express();
-app.use(express.json());
-app.use(express.urlencoded({extended:true}));
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/teratics',{
-    useNewUrlParser: true,
-    useUnifiedTopology:true,
-    useCreateIndex: true,
-
-});
-
-
-
-app.use('/api/users', userRouter);
-app.use('/api/products', productRouter);
-app.get('/', (req, res)=>{
-    res.send('server is ready');
-});
-
-app.use((err, req, res, next)=>{
-    res.status(500).send({message:err.message});
-});
-
 const port = process.env.PORT || 5000;
-app.listen(5000, ()=>{
-    console.log(`serve at http://localhost:${port}`);
+
+app.use(cors());
+app.use(express.json());
+
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true,  useUnifiedTopology: true }
+);
+const connection = mongoose.connection;
+connection.once('open', () => {
+  console.log("MongoDB database connection established successfully");
+})
+
+const productsRouter = require('./routes/products');
+const usersRouter = require('./routes/users');
+
+app.use('/products', productsRouter);
+app.use('/users', usersRouter);
+app.use('/api', AuthRoute);
+
+
+app.listen(port, () => {
+    console.log(`Server is running on port: ${port}`);
 });
