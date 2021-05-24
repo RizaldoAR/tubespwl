@@ -18,13 +18,16 @@ import {
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faSignInAlt, faMapMarkedAlt, faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram, faAmazon, faWhatsapp, faLine } from '@fortawesome/free-brands-svg-icons';
 import MainScreen from './Screens/MainScreen';
 import ProductScreen from './Screens/ProductScreen';
 import CatalogueScreen from './Screens/CatalogueScreen';
 import AboutScreen from './Screens/AboutScreen';
 import HelpScreen from './Screens/HelpScreen';
 import LoginScreen from './Screens/LoginScreen';
+import RegisterScreen from './Screens/RegisterScreen';
+import Admin from './Screens/Admin';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,6 +59,8 @@ function App() {
         <NavbarText className="navbarTextTag"><Link className="loginButton" to="/login">Login <FontAwesomeIcon icon={faSignInAlt}/></Link></NavbarText>
       </Navbar>
 
+    <Route path="/register" component={RegisterScreen}/>
+    <Route path="/admin" component={Admin}/>
     <Route path="/login" component={LoginScreen}/>
     <Route path="/help" component={HelpScreen}/>
     <Route path="/about" component={AboutScreen}/>
@@ -64,12 +69,30 @@ function App() {
     <Route path="/" exact={true} component={MainScreen}/>
     <div className="footer">
       <div className="container-fluid">
-      <div className="row">
-              <div className="col-5">
-                  <p className="text-white">Find Us At!</p>
+      <div className="row pt-3 pb-5">
+              <div className="col-6">
+                  <h5 className="headerFooter mb-3">Find Us At!</h5>
+                  <div className="col-10 offset-1">
+                    <label className="col-10 offset-1"><FontAwesomeIcon icon={faInstagram}/> teratics.tech</label><br></br>
+                  </div>
+                  <div className="col-10 offset-1">
+                    <label className="col-10 offset-1"><FontAwesomeIcon icon={faAmazon}/> Teratics Store</label>
+                  </div>
+                  <div className="col-10 offset-1">
+                    <label className="col-10 offset-1"><FontAwesomeIcon icon={faMapMarkedAlt}/> Way Huwi, Jati Agung, South Lampung, Lampung</label>
+                  </div>
               </div>
-              <div className="col-5">
-                  <p>Contact Us</p>
+              <div className="col-6">
+                  <h5 className="headerFooter mb-3">Contact Us</h5>
+                  <div className="col-10 offset-1">
+                    <label className="col-10 offset-1"><FontAwesomeIcon icon={faPhoneSquareAlt}/> +62-895-0392-4256 (Yafi)</label><br></br>
+                  </div>
+                  <div className="col-10 offset-1">
+                    <label className="col-10 offset-1"><FontAwesomeIcon icon={faWhatsapp}/> +62-812-74027237 (Rizaldo)</label>
+                  </div>
+                  <div className="col-10 offset-1">
+                    <label className="col-10 offset-1"><FontAwesomeIcon icon={faLine}/> +62-821-6742-3559 (Robby)</label>
+                  </div>
               </div>
             </div>
       </div>

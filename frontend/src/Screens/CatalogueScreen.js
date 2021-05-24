@@ -17,11 +17,11 @@ function CatalogueScreen (props){
       </Jumbotron>
     </div>
     <div className="container my-5">
-        <div className="filterDiv">
+        <div className="filterDiv col-6 offset-0 col-sm-4 offset-sm-8">
         <h5 className="text-secondary">Filters</h5>
         <Form inline>
             <div className="row">
-                <div className="col-2">
+                <div className="col-6">
                     <Input type="select" bsSize="sm">
                         <option>Category...</option>
                         <option>Clothes</option>
@@ -29,7 +29,7 @@ function CatalogueScreen (props){
                         <option>Sandal</option>
                     </Input>
                 </div>
-                <div className="col-2">
+                <div className="col-6">
                     <Input type="select" bsSize="sm">
                         <option>Sort...</option>
                         <option>Cheaper</option>

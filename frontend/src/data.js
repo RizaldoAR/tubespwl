@@ -2,39 +2,51 @@ export default {
     products:[
         {
         _id:'1',
-        name: 'Baju Keren',
+        name: 'Tie Dye "Spring Vibes"',
         category: 'Shirt',
         image: '/assets/images/b1.jpg',
-        price: 100,
+        price: '100.000',
         brand: 'Wow',
-        desc: 'Ini baju anjay mabar banget, bisa dipake buat kemana aja cocok. Tie Dye dengan nuansa kekinian yang sangat trendy.'
+        desc: 'Our new collection of tie dye shirt. Feel new sensation from using tie dye with seasonal vibes.'
     },
     {
         _id:'2',
-        name: 'Baju Biasa',
+        name: 'Tie Dye "Summer Vibes"',
         category: 'Shirt',
-        image: '/assets/images/b1.jpg',
-        price: 100,
+        image: '/assets/images/b2.jpg',
+        price: '100.000',
         brand: 'Wow',
-        desc: 'Ini baju anjay mabar banget, bisa dipake buat kemana aja cocok. Tie Dye dengan nuansa kekinian yang sangat trendy.'
+        desc: 'Our new collection of tie dye shirt. Feel new sensation from using tie dye with seasonal vibes.'
     },
     {
         _id:'3',
-        name: 'Baju Jelek',
+        name: 'Tie Dye "Winter Vibes"',
         category: 'Shirt',
-        image: '/assets/images/b1.jpg',
-        price: 200,
+        image: '/assets/images/b3.jpg',
+        price: '200.000',
         brand: 'Wow',
-        desc: 'Ini baju anjay mabar banget, bisa dipake buat kemana aja cocok. Tie Dye dengan nuansa kekinian yang sangat trendy.'
+        desc: 'Our new collection of tie dye shirt. Feel new sensation from using tie dye with seasonal vibes.'
+    }
+],
+
+    messages:[
+        {
+        message_id:'1',
+        email:'yafi0721@gmail.com',
+        name:'yafi',
+        message:'please open your store in Indonesia'
     },
     {
-        _id:'4',
-        name: 'Baju Jelek',
-        category: 'Shirt',
-        image: '/assets/images/b1.jpg',
-        price: 200,
-        brand: 'Wow',
-        desc: 'Ini baju anjay mabar banget, bisa dipake buat kemana aja cocok. Tie Dye dengan nuansa kekinian yang sangat trendy.'
+        message_id:'2',
+        email:'nandagoreh@gmail.com',
+        name:'nanda',
+        message:'please open your store in Zimbabwe'
+    },
+    {
+        message_id:'3',
+        email:'takiyagenji0721@gmail.com',
+        name:'genji',
+        message:'please open your store in Japan'
     }
 ]
 }
