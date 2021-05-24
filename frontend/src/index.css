@@ -1,5 +1,13 @@
 #root{
   height: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/*font*/
+
+@font-face {
+  font-family: 'Source Sans Pro', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 }
 
 /*navbar*/
@@ -37,7 +45,12 @@
 /*end of navbar*/
 
 .footer{
-  background-color: grey;
+  background-color: rgb(33, 33, 33);
+  color: rgb(201, 201, 201);
+}
+
+.headerFooter{
+  text-align: center;
 }
 
 /*style card produk*/
@@ -68,6 +81,12 @@
   margin-bottom: 3rem;
 }
 
+.iconSocmedProduct{
+  display: block;
+  height: 50px;
+  margin: auto;
+}
+
 /*catalogue*/
 
 .headerCatalogue{
@@ -79,4 +98,10 @@
 .aboutBody{
   height: 100%;
   display: flex;
+}
+
+/*help*/
+
+.waHelp{
+  font-size: 25px;
 }
