@@ -6,7 +6,7 @@ import { Form, Input, FormGroup, Label, Button } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
-import { setUserSession } from "../utils/common";
+import { setUserSession, setAdminSession } from "../utils/common";
 
 
 
@@ -30,12 +30,13 @@ function LoginScreen(props) {
       password: password
     }).then(response =>{
       setLoading(false);
-      setUserSession(response.data.token, response.data.user);
+      
       if(response.data.isAdmin){
+        setAdminSession(response.data.token, response.data.user, response.data.isAdmin);
         props.history.push('/admin');
       }
       else{
-        
+        setUserSession(response.data.token, response.data.user);
          props.history.push('/');
       }
       

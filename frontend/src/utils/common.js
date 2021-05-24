@@ -9,6 +9,10 @@ export const getUser = () => {
   export const getToken = () => {
     return sessionStorage.getItem('token') || null;
   }
+
+  export const getIsadmin = () => {
+    return sessionStorage.getItem('isAdmin') || null;
+  }
   
   // remove the token and user from the session storage
   export const removeUserSession = () => {
@@ -20,4 +24,12 @@ export const getUser = () => {
   export const setUserSession = (token, user) => {
     sessionStorage.setItem('token', token);
     sessionStorage.setItem('user', JSON.stringify(user));
+    
+  }
+
+  export const setAdminSession = (token, user, isAdmin) => {
+    sessionStorage.setItem('token', token);
+    sessionStorage.setItem('user', JSON.stringify(user));
+    sessionStorage.setItem('isAdmin', isAdmin);
+    
   }

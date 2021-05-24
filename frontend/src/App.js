@@ -28,6 +28,8 @@ import HelpScreen from './Screens/HelpScreen';
 import LoginScreen from './Screens/LoginScreen';
 import RegisterScreen from './Screens/RegisterScreen';
 import Admin from './Screens/Admin';
+import PrivateRoute from './utils/PrivateRoute'
+import PublicRoute from './utils/PublicRoutes';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,8 +62,8 @@ function App() {
       </Navbar>
 
     <Route path="/register" component={RegisterScreen}/>
-    <Route path="/admin" component={Admin}/>
-    <Route path="/login" component={LoginScreen}/>
+    <PrivateRoute path="/admin" component={Admin}/>
+    <PublicRoute path="/login" component={LoginScreen}/>
     <Route path="/help" component={HelpScreen}/>
     <Route path="/about" component={AboutScreen}/>
     <Route path="/catalogue" component={CatalogueScreen}/>  
