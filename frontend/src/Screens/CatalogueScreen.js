@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import data from '../data';
 import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
   } from 'reactstrap';
 import { Form, Input, FormGroup, Jumbotron, Container } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 function CatalogueScreen (props){
+    
+    
+    const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchData = async () =>{
+      const { data } = await axios.get("http://localhost:5000/products");
+      setProducts(data);
+    };
+    fetchData();
+  }, []);
+
+
+
+
     return <div>
     <div className="container my-5">
       <Jumbotron fluid>
@@ -41,7 +55,7 @@ function CatalogueScreen (props){
         </div>
         <hr></hr>
         <div className="row">
-        {data.products.map(product=>
+        {products.map(product=>
           <div className="col-4">
               <Card className="tagCard" style={{borderColor:"rgba(255, 255, 255, 0)"}}>
               <Link to={'/product/' + product._id}><CardImg top width="100%" src={product.image} alt="Card image cap" /></Link>

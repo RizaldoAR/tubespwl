@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import data from '../data';
 import {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Tooltip } from 'reactstrap';
+import axios from 'axios';
 
 function ProductScreen (props){
-    const product = data.products.find(x=> x._id === props.match.params.id);
+    
+    const [product, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchData = async () =>{
+        const id = props.match.params.id
+      const { data } = await axios.get("http://localhost:5000/products/"+(id));
+      setProducts(data);
+    };
+    fetchData();
+    // const product = products.find(x=> x._id === props.match.params.id);
+    
+  }, []);
+
+
+
+
+     
+     
     
     const [tooltipOpen1, setTooltipOpen1] = useState(false);
     const toggle1 = () => setTooltipOpen1(!tooltipOpen1);
